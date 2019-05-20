@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'credit_cardregular';
+    src: url('fonts/creditCardFont.woff') format('woff2'),
+         url('fonts/creditCardFont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#preenchimentoArea
+{
+    border: 2px solid red;
+    width: 25%;
+    float: left;
+    margin: 0 0 0 10%;
+}
+
+#cartaoArea
+{
+    border: 2px solid red;
+    width: 25%;
+    float: left;
+}
+
+#creditCardFrente
+{
+    border: 2px solid white;
+    border-radius: 15px;
+    width: 300px;
+    height: 150px;
+    margin: 10px;
+    background-image: linear-gradient(120deg, rgba(207, 203, 247) , rgb(104, 74, 236));
+    position: fixed;
+    z-index: 3;
+    padding: 0;
+}
+#cardLogo
+{
+    width: 100px;
+    display: block;
+    position: relative;
+    left: 62%;
+    margin: 0;
+    padding: 0;
+}
+#chipCard 
+{
+    width: 40px; 
+    margin: 0 0 0 15px;
+    padding: 0;
+}
+.cardNum, #cardNome, #cardValDia, #cardValAno
+{
+    margin: 0;
+    display: inline-block;
+    
+}
+
+.cardNum
+{
+    font-family: 'credit_cardregular';
+    font-size: 15px;
+    color: white;
+}
+
+#areaNum1,#nomeArea
+{
+    margin-left: 15px;
+}
+#valArea, #nomeArea
+{
+    display: inline-block;
+    width: 50px;
+    border: 2px solid black;
+}
+#nomeArea 
+{
+    display: inline-block;
+    width: 200px;
+    text-align: left;
+}
+
+#creditCardAtras
+{
+    border: 2px solid white;
+    border-radius: 15px;
+    width: 300px;
+    height: 150px;
+    margin: 10px;
+    background-image: linear-gradient(120deg, rgba(207, 203, 247) , rgb(104, 74, 236));
+    position: fixed;
+    z-index: 2;
+}
+
+#faixaPreta
+{
+    border: 2px solid black;
+    margin: 10% 0;
+    height: 20px;
+    background-color: black
+}
