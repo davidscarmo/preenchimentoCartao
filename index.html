@@ -9,36 +9,54 @@
     <title>Preenchimento Cartao</title>
 </head>
 <body>
-    <div id="preenchimentoArea">
+    <form name="cardDados" id="preenchimentoArea">
         
-        <input type="radio" name="cardFlag" value="visa" > Visa
-        <input type="radio" name="cardFlag" value="mastercard"> MasterCard<br>
-        Número do Cartão: <input type="text" name="cardNum" maxlength="16"><br>
-        Nome: <input type="text" name="cardNome"><br>
-        Data de Vencimento: <input type="text" name="cardVencDia" maxlength="2"><input type="text" name="cardVencAno" maxlength="2">
-        Código de Segurança: <input type="text" name="cardCodSec" maxlength="3">
-    </div>
+        <fieldset>
+        <legend>Dados para Pagamento com Carmo Card</legend>
+        Bandeira do Cartão: 
+        <input type="radio" name="cardFlag" value="visa" onClick="flagCard('0')"> Visa
+        <input type="radio" name="cardFlag" value="mastercard" onClick="flagCard('0')"> MasterCard<br>
+
+        Número do Cartão: <input  id="cardNum0" type="text" name="cardNum0" onKeyup="pNumCard(this, document.cardDados.cardNum1, '0','0')"  maxlength="4" size =2>
+        <input  id="cardNum1" type="text" name="cardNum1" onKeyup="pNumCard(this, document.cardDados.cardNum2, '1' ,'0')"  maxlength="4" size =2>
+        <input  id="cardNum2" type="text" name="cardNum2" onKeyup="pNumCard(this, document.cardDados.cardNum3, '2','0')"  maxlength="4" size =2>
+        <input  id="cardNum3" type="text" name="cardNum3" onKeyup="pNumCard(this, document.cardDados.cardNome, '3','0')"  maxlength="4" size =2>
+
+        Nome: <input type="text" id="cardNome" name="cardNome" onKeyup="pNomeCard(this, document.cardDados.cardVencDia, '0','0')" maxlength="16"><br>
+
+
+        Data de Vencimento:
+            <input type="text" id="dataVal0" name="cardVencDia" maxlength="2" size="1" onKeyup="pValCard(this, document.cardDados.cardVencAno, '0','0')">
+            <input type="text" id="dataVal1" name="cardVencAno" maxlength="2" size="1" onKeyup="pValCard(this, document.cardDados.cardCodSec, '1','0')" > <br>
+
+        Código de Segurança: <input onKeyup="secCod('1')" type="text"  id="cardCodSec" name="cardCodSec" maxlength="3" size="1">
+        </fieldset>
+    </form>
 
     <div id="cartaoArea">
         <div id="creditCardFrente">
             <img id ="cardLogo" src="cardLogo.png" alt="">
-            <img id ="chipCard" src="chipCard.png" alt="imagem de um chip de cartão de crédito"><br>
+            <img id ="chipCard" src="chipCard.png" alt="imagem de um chip de cartão de crédito">
             
-            <p class="cardNum" id="areaNum1">0000</p>
-            <p class="cardNum" id="areaNum2">0000</p>
-            <p class="cardNum" id="areaNum3">0000</p>
-            <p class="cardNum" id="areaNum4">0000</p>
+            <div id ="flagArea">  
+
+            </div><br>
+           
+            <p class="cardNum" id="areaNum0"></p>
+            <p class="cardNum" id="areaNum1"></p>
+            <p class="cardNum" id="areaNum2"></p>
+            <p class="cardNum" id="areaNum3"></p><br>
             
             <div id="nomeArea">
-                <p id="cardNome">David do Carmo Santos</p>
+                <p id="cardAreaNome" ></p>
             </div>
             <div id="valArea">
-                <p id="cardValDia">20</p> <p style="display:inline">/</p> <p id="cardValAno">20</p>
+                <p id="cardVal0"></p> <p style="display:inline">/</p> <p id="cardVal1"></p>
             </div>
         </div>
-        <div id="creditCardAtras">
+        <div id="creditCardVerso">
             <div id="faixaPreta"></div>
-            
+            <div id="faixaCod"><p id="codArea"></p></div>
         </div>
     </div>
 </body>
